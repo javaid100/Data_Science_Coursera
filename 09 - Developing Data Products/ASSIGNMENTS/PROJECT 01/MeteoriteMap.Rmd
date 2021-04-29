@@ -1,5 +1,5 @@
 ---
-title: "Meteorite Map"
+title: "Map using Leaflet"
 author: "Javaid Ahmed"
 date: "April 29, 2021"
 output: html_document
