@@ -1,0 +1,50 @@
+---
+title: "Global Terrorism"
+author: "Javaid Ahmed"
+date: "April 30, 2021"
+output:
+  ioslides_presentation:
+    css: custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Global Terrorism
+An interactive app to easily explore terrorism around the globe. The app utilizes the Global Terrorism Database (GTD) which is an open-source database including information on terrorist attacks around the world from 1970 through 2016 containing more than 170,000 records.
+
+- The database is maintained by researchers at the National Consortium for the Study of Terrorism and Responses to Terrorism (START)
+
+- More information on the database can be found <a href='http://start.umd.edu/gtd/'>here</a>.
+
+## Global Terrorism
+The app makes viewing the terrorism data much easier. It aggregates the data to be viewed on the world map by using plotly. The data can be further filtered by date, weapon type or attack type.
+<br>
+<br>
+<center><img src="screenshot.png" width=100% /></center>
+
+
+## Global Terrorism
+The first 100 rows of the data being explored.
+
+```{r}
+library(knitr)
+library(kableExtra)
+terrorism <- read.csv('terrorism_short.csv')
+kable(head(terrorism, 100), "html",align = "c") %>%
+  kable_styling(font_size = 18, position = "center") %>%
+  scroll_box(width = "800px", height = "435px")
+```
+
+## Global Terrorism
+To use the Global Terrorism app please head <a href='https://parkinsontrent.shinyapps.io/global_terrorism/'>here</a>.
+<br>
+<br>
+To view the source code pertaining to the project please head to <a href='https://github.com/javaid100/datasciencecoursera/tree/main/09%20-%20Developing%20Data%20Products/ASSIGNMENTS/PROJECT%2003'>github</a>.
+<br>
+<br>
+Have fun using the app. 
+<br>
+<br>
+Thanks!
