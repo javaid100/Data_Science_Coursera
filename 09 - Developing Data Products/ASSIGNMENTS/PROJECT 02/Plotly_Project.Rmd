@@ -1,7 +1,7 @@
 ---
 title: "Cereals with Plotly"
-author: "Trent Parkinson"
-date: "February 21, 2018"
+author: "Javaid Ahmed"
+date: "April 29, 2021"
 output:
   ioslides_presentation:
     css: styles.css
@@ -40,4 +40,3 @@ subplot(p1, p2) %>% highlight("plotly_click", off = "plotly_doubleclick") %>% hi
 
 ## Thanks
 
-If you would like to see the R code that generated these plots please visit <a href ="https://github.com/trentparkinson/Developing-Data-Products/blob/master/plotly_project.Rmd">github</a>.
