@@ -1,0 +1,43 @@
+---
+title: "Cereals with Plotly"
+author: "Trent Parkinson"
+date: "February 21, 2018"
+output:
+  ioslides_presentation:
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Directions
+
+A box plot and scatter plot showing the cereals ratings based on manufacturer and sugar content.
+
+- Click a box plot to show only that manufacturer in the scatter plot.
+- Double click to reset.
+- Hover over the point to see specific info.
+
+## Cereals
+
+```{r, warning=FALSE, message=FALSE}
+library(crosstalk)
+library(plotly)
+library(plyr)
+cereal <- read.csv("cereal.csv")
+cereal <- cereal[,c(1,2,10,16)]
+names(cereal) <- c("Name","Manufacturer","Sugar","Rating")
+cereal$Name <- as.character(cereal$Name)
+cereal$Rating <- round(cereal$Rating,digits=2)
+cereal[cereal$Sugar == -1,'Sugar'] <- 1
+cereal$Manufacturer <- mapvalues(cereal$Manufacturer, from = c("A", "G","K","N","P","Q","R"), to = c("American Home", "General Mills","Kelloggs","Nabisco","Post","Quaker Oats","Ralston Purina"))
+m <- SharedData$new(cereal, ~Name)
+p1 <- ggplot(m, aes(x= Manufacturer, y= Rating, fill = Manufacturer)) + geom_boxplot() + scale_x_discrete(labels = c("A", "G","K","N","P","Q","R"))
+p2 <- ggplot(m, aes(Sugar, Rating, fill = Manufacturer)) + geom_point(aes(size = 1.5))
+subplot(p1, p2) %>% highlight("plotly_click", off = "plotly_doubleclick") %>% hide_legend()
+```
+
+## Thanks
+
+If you would like to see the R code that generated these plots please visit <a href ="https://github.com/trentparkinson/Developing-Data-Products/blob/master/plotly_project.Rmd">github</a>.
