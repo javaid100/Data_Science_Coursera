@@ -9,4 +9,4 @@ The Shiny application is hosted on shinyapps.io and the Presentation (slides) ar
 # Links
 Final project submission (Shiny App): https://jhunter.shinyapps.io/coursera-data-science-capstone/        <br />
 Final project submission (Presentation): http://rpubs.com/OracleJavaNet/courseradatascience_capstone/     <br />
-Source code files available on GitHub: https://github.com/oraclejavanet/coursera-data-science-capstone/   <br />
+Source code files available on GitHub: https://github.com/javaid100/datasciencecoursera/tree/main/10%20-%20Data%20Science%20Capstone/ASSIGNMENTS/Project%2002   <br />
